@@ -7,6 +7,7 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.paint.Color;
 
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,7 +17,7 @@ public class G_ChessBoard extends GridPane {
     private final List <G_Tiles> tiles = new ArrayList<G_Tiles>();
     private final Game game;
     private G_Tiles tmp_tile;
-    public G_ChessBoard() throws FileNotFoundException {
+    public G_ChessBoard() throws FileNotFoundException, URISyntaxException {
         game = Game.initialize_Game();
         cb = game.getChessBoard();
         G_Tiles SHITPANE = new G_Tiles(cb.getTiles().get(0), this);
@@ -65,7 +66,7 @@ public class G_ChessBoard extends GridPane {
     public static void main(String[] Args){
     }
 
-    public void doAMove() throws FileNotFoundException {
+    public void doAMove() throws FileNotFoundException, URISyntaxException {
         int type_of_move = Move.makeAMove(G_Move.buffer, this.getGame());
         if( type_of_move >=0 ){
             this.getChessBoard().print();

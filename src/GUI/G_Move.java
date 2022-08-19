@@ -11,6 +11,7 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 
 public class G_Move {
     Move move;
@@ -23,7 +24,7 @@ public class G_Move {
         move= m;
         buffer = null;
     }
-    public static void makeAMove(G_ChessBoard Gcb, String st, boolean isACaptuirngMove, int type_of_move) throws FileNotFoundException {
+    public static void makeAMove(G_ChessBoard Gcb, String st, boolean isACaptuirngMove, int type_of_move) throws FileNotFoundException, URISyntaxException {
         Game game = Gcb.getGame();
 
         G_Piece support;
@@ -90,7 +91,7 @@ public class G_Move {
 
     }
 
-    public static void add_to_buffer(String string_to_add, G_ChessBoard Gcb) throws FileNotFoundException {
+    public static void add_to_buffer(String string_to_add, G_ChessBoard Gcb) throws FileNotFoundException, URISyntaxException {
         System.out.println("BUFFER = "+ buffer+ "trying to add: " + string_to_add);
         assert (string_to_add.length() == 2);
 

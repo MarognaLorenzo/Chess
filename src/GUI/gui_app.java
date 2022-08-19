@@ -12,6 +12,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.io.FileNotFoundException;
+import java.net.URISyntaxException;
 import java.util.List;
 
 
@@ -22,7 +23,7 @@ public class gui_app extends Application {
     }
 
     @Override
-    public void start(Stage primaryStage) throws FileNotFoundException {
+    public void start(Stage primaryStage) throws FileNotFoundException, URISyntaxException {
         Stage window = primaryStage;
         G_ChessBoard board = new G_ChessBoard();
         ChessBoard cb = board.getChessBoard();
