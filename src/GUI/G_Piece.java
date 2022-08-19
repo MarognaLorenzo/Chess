@@ -16,50 +16,98 @@ public class G_Piece extends ImageView {
     public G_Piece(ChessPiece p, G_ChessBoard graphic_chess_board) throws FileNotFoundException, URISyntaxException {
         piece = p;
         Gcb = graphic_chess_board;
-        if(piece != null ){
+        String basic_path = new File("").getAbsolutePath();
+        if(System.getProperty("os.name").toLowerCase().contains("windows")){
+            if(piece != null ) {
                 if (piece instanceof King) {
                     if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\whiteKing.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\whiteKing.png"))));
                     else {
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\blackKing.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\blackKing.png"))));
                     }
                 }
                 if (piece instanceof Queen) {
                     if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\whiteQueen.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\whiteQueen.png"))));
                     else {
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\blackQueen.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\blackQueen.png"))));
                     }
                 }
                 if (piece instanceof Pawn) {
                     if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\whitePawn.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\whitePawn.png"))));
                     else {
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\blackPawn.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\blackPawn.png"))));
                     }
                 }
                 if (piece instanceof Bishop) {
                     if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\whiteBishop.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\whiteBishop.png"))));
                     else {
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\blackBishop.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\blackBishop.png"))));
                     }
                 }
                 if (piece instanceof Knight) {
                     if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\whiteKnight.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\whiteKnight.png"))));
                     else {
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\blackKnight.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\blackKnight.png"))));
                     }
                 }
                 if (piece instanceof Rook) {
                     if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\whiteRook.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\whiteRook.png"))));
                     else {
-                        this.setImage(new Image(new FileInputStream("C:\\Users\\utente\\Desktop\\coding\\Chess\\src\\Images\\blackRook.png")));
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("\\src\\Images\\blackRook.png"))));
                     }
                 }
             }
+        } else {
+            if(piece != null ) {
+                if (piece instanceof King) {
+                    if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/whiteKing.png"))));
+                    else {
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/blackKing.png"))));
+                    }
+                }
+                if (piece instanceof Queen) {
+                    if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/whiteQueen.png"))));
+                    else {
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/blackQueen.png"))));
+                    }
+                }
+                if (piece instanceof Pawn) {
+                    if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/whitePawn.png"))));
+                    else {
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/blackPawn.png"))));
+                    }
+                }
+                if (piece instanceof Bishop) {
+                    if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/whiteBishop.png"))));
+                    else {
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/blackBishop.png"))));
+                    }
+                }
+                if (piece instanceof Knight) {
+                    if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/whiteKnight.png"))));
+                    else {
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/blackKnight.png"))));
+                    }
+                }
+                if (piece instanceof Rook) {
+                    if (piece.getColor() == ChessPiece.PIECE_COLOR.WHITE)
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/whiteRook.png"))));
+                    else {
+                        this.setImage(new Image(new FileInputStream(basic_path.concat("/src/Images/blackRook.png"))));
+                    }
+                }
+            }
+        }
 
         this.setFitHeight(80);
         this.setFitWidth(80);
