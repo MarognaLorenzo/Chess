@@ -67,7 +67,7 @@ public class Move {
     public static int makeAMove(String st, Game game){
         if (st.charAt(2) == 't'){Move.printAvailableTiles(st.charAt(0), Integer.parseInt(st.substring(1,2)), game); return 0;}
         try {
-            if(game.getChessBoard().getTiles().get(Tile.getID(st.charAt(0),Integer.parseInt(st.substring(1,2)))).getPieceOn()==null) {System.out.println("Mossa non valida"); return 0;}
+            if(game.getChessBoard().getTiles().get(Tile.getID(st.charAt(0),Integer.parseInt(st.substring(1,2)))).getPieceOn()==null) {System.out.println("Mossa non valida"); return -1;}
 
             Move move = new Move(game.getChessBoard().getTiles().get(Tile.getID(st.charAt(0),Integer.parseInt(st.substring(1,2)))).getPieceOn(),
                     game.getChessBoard().getTiles().get(Tile.getID(st.charAt(0),Integer.parseInt(st.substring(1,2)))),
