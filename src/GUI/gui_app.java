@@ -38,7 +38,7 @@ public class gui_app extends Application {
         Scene scene = new Scene(bigHorizontalBox);
         window.setScene(scene);
         window.setResizable(false);
-        window.setTitle("Self-chess Official Game");
+        window.setTitle("Chess Official Game - by Lorenzo Marogna");
         window.show();
     }
 

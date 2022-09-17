@@ -9,6 +9,7 @@ import java.util.List;
 
 public class Rook extends ChessPiece{
 
+    private boolean hasEverMoved = false;
     public Rook(){
         setName("R");
     }
@@ -47,5 +48,13 @@ public class Rook extends ChessPiece{
             cb.print();
             if(Move.makeAMove(Move.askForAMove(game.getNumberOfMoves(), cb),game)>=0) game.incrementNumberOfMoves();
         }
+    }
+
+    public boolean isHasEverMoved() {
+        return hasEverMoved;
+    }
+
+    public void setHasEverMoved(boolean hasEverMoved) {
+        this.hasEverMoved = hasEverMoved;
     }
 }

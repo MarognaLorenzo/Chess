@@ -10,7 +10,7 @@ public class G_Tiles extends Rectangle {
     Tile tile;
     G_Piece g_pieceOn;
     G_ChessBoard Gcb;
-    public G_Tiles(Tile tile, G_ChessBoard graphic_chess_board) throws FileNotFoundException, URISyntaxException {
+    public G_Tiles(Tile tile, G_ChessBoard graphic_chess_board) throws FileNotFoundException {
         Gcb = graphic_chess_board;
         this.tile = tile;
         this.setWidth(80);
@@ -18,7 +18,7 @@ public class G_Tiles extends Rectangle {
         this.setOnMouseClicked(e -> {
             try {
                 G_Move.add_to_buffer(this.tile.getCoordinate().toString(), this.Gcb);
-            } catch (FileNotFoundException | URISyntaxException ex) {
+            } catch (FileNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
         });

@@ -8,8 +8,9 @@ import java.util.List;
 
 public class Game {
     private Player WhitePlayer;
-
     private Player BlackPlayer;
+    private boolean hasWhiteKMoved = false;
+    private boolean hasBlackKMoved = false;
     private int numberOfMoves;
     private ChessBoard chessBoard;
     public Game(ChessBoard cb){

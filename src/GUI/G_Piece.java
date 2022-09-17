@@ -13,7 +13,7 @@ import java.net.URISyntaxException;
 public class G_Piece extends ImageView {
     ChessPiece piece;
     G_ChessBoard Gcb;
-    public G_Piece(ChessPiece p, G_ChessBoard graphic_chess_board) throws FileNotFoundException, URISyntaxException {
+    public G_Piece(ChessPiece p, G_ChessBoard graphic_chess_board) throws FileNotFoundException {
         piece = p;
         Gcb = graphic_chess_board;
         String basic_path = new File("").getAbsolutePath();
@@ -114,7 +114,7 @@ public class G_Piece extends ImageView {
         this.setOnMouseClicked(e -> {
             try {
                 G_Move.add_to_buffer(this.piece.getPosition().getCoordinate().toString(), this.Gcb);
-            } catch (FileNotFoundException | URISyntaxException ex) {
+            } catch (FileNotFoundException ex) {
                 throw new RuntimeException(ex);
             }
         });

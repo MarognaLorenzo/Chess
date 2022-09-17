@@ -30,9 +30,9 @@ public class G_ChessBoard extends GridPane {
             for(int c=1; c<=8; c++){
                 tmp_tile = new G_Tiles(cb.getTiles().get(Tile.getID(c,r)), this);
                 if (((r % 2 == 0 && c % 2 == 0) || (r % 2 == 1 && c % 2 == 1))) {
-                    tmp_tile.setFill(Color.GREEN);
+                    tmp_tile.setFill(Color.web("rgb(118, 150, 86)"));
                 } else {
-                    tmp_tile.setFill(Color.WHITE);
+                    tmp_tile.setFill(Color.web("rgb(238, 238, 210)"));
                 }
                 StackPane tmp_StackPane = new StackPane(tmp_tile, tmp_tile.g_pieceOn);
                 G_ChessBoard.setConstraints(tmp_StackPane, c, 8-r);
@@ -66,7 +66,7 @@ public class G_ChessBoard extends GridPane {
     public static void main(String[] Args){
     }
 
-    public void doAMove() throws FileNotFoundException, URISyntaxException {
+    public void doAMove() throws FileNotFoundException {
         int type_of_move = Move.makeAMove(G_Move.buffer, this.getGame());
         if( type_of_move >=0 ){
             this.getChessBoard().print();

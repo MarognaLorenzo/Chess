@@ -5,6 +5,7 @@ import Board.Coordinate;
 import Board.Tile;
 import Pieces.ChessPiece;
 import Pieces.King;
+import Pieces.Rook;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -49,6 +50,9 @@ public class Move {
         pieceToMove.setPosition(arrivingTile);
         arrivingTile.setPieceOn(pieceToMove);
         startingTile.removePieceOn();
+        //CHECKINGS FOR CASTLING
+        if(pieceToMove instanceof King && !((King) pieceToMove).isHasEverMoved()) ((King) pieceToMove).setHasEverMoved(true);
+        if(pieceToMove instanceof Rook && !((Rook) pieceToMove).isHasEverMoved()) ((Rook) pieceToMove).setHasEverMoved(true);
     };
 
     public static void makeAMove(ChessPiece piece, Tile sT, Tile aT, ChessBoard cb){
